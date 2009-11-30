@@ -1,4 +1,4 @@
-How to Setup the Search Path for Grammars in GF
+=How to Setup the Search Path for Grammars in GF=
 ----
 
 The GF interpreter is using a search path to find the file that defines a given module. For example if you load file LangEng.gf, the interpreter sees that the file contains the following definition:
