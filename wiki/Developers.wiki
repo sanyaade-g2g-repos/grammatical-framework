@@ -1,15 +1,3 @@
-GF Developers Guide
-Authors: Björn Bringert  and  Krasimir Angelov
-Last update: %%date(%c)
-
-% NOTE: this is a txt2tags file.
-% Create an html file from this file using:
-% txt2tags -t html --toc darcs.txt
-
-%!target:html
-%!options(html): --toc
-%!encoding:utf-8
-
 = Setting up your system for building GF =
 
 Before to build GF from sources you need to install some tools on your system.
