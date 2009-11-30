@@ -1,6 +1,6 @@
 = Setting up your system for building GF =
 
-Before to build GF from sources you need to install some tools on your system.
+Before building GF from sources you need to install some tools on your system.
 GF is written in Haskell, so first of all you need recent version of the Haskell compiler GHC.
 Currently we use GHC 6.10.3 and we recommend that you should use the same version
 as well. This version is not backward compatible with the previous major releases
