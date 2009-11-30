@@ -1,5 +1,7 @@
 = Frequently Asked Questions =
 
-Q: I installed new version of GF and the compiler complains that there are .gfo files compiled with different version of GF.
+Q: I installed new version of GF and now the compiler complains that there are .gfo files compiled with different version of GF.
 
 A: Remove all .gfo files that you have and recompile. These files will be generated automatically. Alternatively you could use option -src when compiling. This will force the compiler to ignore all .gfo files and to regenerate then at first compilation.
+
+----
