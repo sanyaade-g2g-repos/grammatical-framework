@@ -234,10 +234,10 @@ needed for GF. The configuration is started by the command:
 {{{
 $ runghc Setup.hs configure
 }}}
-The command ```runghc``` comes with the GHC compiler and is batch interpreter which executes
+The command {{{runghc}}} comes with the GHC compiler and is batch interpreter which executes
 the specified script without the need to compile it advance. Setup.hs is our compilation driver
 which is based on Cabal. If you don't see any error message from the above command then
-you have everything that is needed for GF. You can also add the option ```-v``` to see
+you have everything that is needed for GF. You can also add the option {{{-v}}} to see
 more details about the configuration.
 
 == Build ==
