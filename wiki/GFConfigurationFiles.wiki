@@ -1,0 +1,33 @@
+The idea is to be able to annotate every 'object' in the abstract syntax of a grammar with some extra information. For example we would like to be able to specify the probability of some syntactic construction.
+
+{{{
+PredVP {
+  printname: "predication";
+  prob: 0.5;
+  deps: arg head
+}
+
+UseV {
+  printname: "use verb";
+  prob: 0.7;
+  deps: head
+}
+
+S {
+  printname: "Sentence"
+}
+}}}
+
+{{{
+data FunAnnotation
+  = FunAnnotation
+     { funPrintName :: String
+     , funProb :: Double
+     , funDeps :: [CId]
+     }
+
+data CatAnnotation
+  = CatAnnotation
+     { catPrintName :: String
+     }
+}}}
