@@ -5,3 +5,7 @@ Q: I installed new version of GF and now the compiler complains that there are .
 
 A: Remove all .gfo files that you have and recompile. These files are generated as output of compilation, so you don't loose any important information. Alternatively you could use option -src when compiling. This will force the compiler to ignore all existing .gfo files and to generate fresh one.
 ----
+Q: I try to load a grammar but the compiler complains that it could not find some module. 
+
+A: The compiler doesn't know where to find the module. You must specify the search path. There is a page about how to setup the [SearchPath search path].
+----
