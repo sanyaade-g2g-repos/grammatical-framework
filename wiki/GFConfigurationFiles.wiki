@@ -22,8 +22,8 @@ S {
 data FunAnnotation
   = FunAnnotation
      { funPrintName :: String
-     , funProb :: Double
-     , funDeps :: [CId]
+     , funProb      :: Double
+     , funDeps      :: [CId]
      }
 
 data CatAnnotation
