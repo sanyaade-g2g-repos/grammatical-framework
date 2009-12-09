@@ -224,91 +224,16 @@ Cabal is installed by default together with the GHC compiler. This is actually a
 be used from Haskell to compile projects written in Haskell. The entry point is a script
 called Setup.hs which is placed in the top directory of every project managed with Cabal.
 The three main steps that are needed for compilation are much like what you do in a project
-written in C, you have: configure, build and install.
+written in C, you have: configure, build and install:
 
-
-== Configure ==
-
-During the configuration phase Cabal will check that you have all necessary tools and libraries
-needed for GF. The configuration is started by the command:
 {{{
 $ runghc Setup.hs configure
-}}}
-The command {{{runghc}}} comes with the GHC compiler and is batch interpreter which executes
-the specified script without the need to compile it advance. Setup.hs is our compilation driver
-which is based on Cabal. If you don't see any error message from the above command then
-you have everything that is needed for GF. You can also add the option {{{-v}}} to see
-more details about the configuration.
-
-== Build ==
-
-The build phase does two things. First it builds the GF compiler from the Haskell sources
-and after that it builds the GF Resource Grammar Library using the already build compiler.
-The simplest command is:
-{{{
 $ runghc Setup.hs build
-}}}
-Again you can add the option ```-v``` if you want to see more details.
-
-Sometimes you just want to work on the GF compiler and don't want to recompile the resource
-library after each change. In this case use this extended command:
-{{{
-$ runghc Setup.hs build rgl-none
-}}}
-The resource library could also be compiled in two modes: with present tense only and 
-with all tenses. By default it is compiled with all tenses. If you want to use
-the library with only present tense you can compile it in this special mode with
-the command:
-{{{
-$ runghc Setup.hs build present
-}}}
-Before to use this command make sure that the script lib/src/mkPresent has executable
-permissions on Linux.
-
-You could also control which languages you want to be recompiled by adding the option
-```langs=list```. For example the following command will compile only the English and the Swedish
-language:
-{{{
-$ runghc Setup.hs build langs=Eng,Swe
-}}}
-
-== Install ==
-
-After you have compiled GF you can install the binaries to make the system usable.
-On Linux you will need root privileges to do this. Use the command:
-{{{
-$ su
-}}}
-and enter the root password. This step should be skipped on Windows.
-
-The installation itself is started with the command:
-{{{
 $ runghc Setup.hs install
 }}}
-This command installs the GF compiler in the default place for executable
-files in your system. For example on Linux this is usualy /usr/local/bin and on
-Windows this is c:\Program Files\Haskell\bin. If you want to install in some
-other place then use the ```--prefix``` option during the configuration phase.
 
-The compiled GF Resource Grammar Library will be installed in /usr/local/share/gf-3.0/lib
-on Linux and in c:\Program Files\Haskell\gf-3.0\lib on Windows. Again the location could
-be changed using the ```--prefix``` option.
+For the last command you may need root permissions. Setup.hs also has other options which are custom for GF. See UsingSetupHs for more details.
 
-== Clean ==
-
-Sometimes you want to clean up the compilation and start again from clean
-sources. Use the clean command for this purpose:
-{{{
-$ runghc Setup.hs clean
-}}}
-
-== SDist ==
-
-You can use the command:
-{{{
-$ runghc Setup.hs sdist
-}}}
-to prepare archive with all source codes needed to compile GF.
 
 = Compilation with make =
 
@@ -335,33 +260,3 @@ and to build source distribution archive run:
 {{{
 $ make sdist
 }}}
-
-= Running the testsuite =
-
-GF has testsuite. It is run with the following command:
-{{{
-$ runghc Setup.hs test
-}}}
-The testsuite architecture for GF is very simple but still very flexible.
-GF by itself is an interpreter and could execute commands in batch mode.
-This is everything that we need to organize a testsuite. The root of the 
-testsuite is the testsuite/ directory. It contains subdirectories which
-themself contain GF batch files (with extension .gfs). The above command
-searches the subdirectories of the testsuite/ directory for files with extension
-.gfs and when it finds one it is executed with the GF interpreter.
-The output of the script is stored in file with extension .out and is compared
-with the content of the corresponding file with extension .gold, if there is one.
-If the contents are identical the command reports that the test was passed successfully.
-Otherwise the test had failed.
-
-Every time when you make some changes to GF that have to be tested, instead of
-writing the commands by hand in the GF shell, add them to one .gfs file in the testsuite
-and run the test. In this way you can use the same test later and we will be sure
-that we will not incidentaly break your code later.
-
-If you don't want to run the whole testsuite you can write the path to the subdirectory
-in which you are interested. For example:
-{{{
-$ runghc Setup.hs test testsuite/compiler
-}}}
-will run only the testsuite for the compiler.
