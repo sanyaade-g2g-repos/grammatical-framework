@@ -1,6 +1,6 @@
  * [FAQ]
  * Developers
-   * [DevelopersPage  Getting the sources]
+   * [DevelopersPage  Building and Installing]
    * [UsingSetupHs    How to use Setup.hs]
    * [UsingTestsuite  How to use the testsuite]
  * Development Ideas
