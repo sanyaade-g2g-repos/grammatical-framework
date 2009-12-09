@@ -1,5 +1,3 @@
-#summary Table of Contents
-
  * [FAQ]
  * [DevelopersPage  Developers Page]
  * Development Ideas
