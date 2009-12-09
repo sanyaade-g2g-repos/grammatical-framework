@@ -1,3 +1,3 @@
  * [FAQ]
- * [DevelopmentIdeas  Development Ideas]
-   * [Implicit Arguments]
+ * Development Ideas
+   * [ImplicitArgumentsDesign  Implicit Arguments]
