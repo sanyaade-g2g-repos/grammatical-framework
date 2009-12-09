@@ -4,7 +4,7 @@
 
 Add your content here.
 
-<wiki:gadget url="http://google-code-feed-gadget.googlecode.com/svn/trunk/gadget.xml" up_feeds="http://google-code-featured.blogspot.com/atom.xml" width="500px" height="340px" border="0"/>
+<wiki:gadget url="http://google-code-feed-gadget.googlecode.com/svn/trunk/gadget.xml" up_feeds="http://grammatical-framework.blogspot.com/atom.xml" width="500px" height="340px" border="0"/>
 
 = Details =
 
