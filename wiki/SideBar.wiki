@@ -1,8 +1,8 @@
  * [FAQ]
  * Developers
-   * [DevelopersPage  Getting the Sources]
-   * [UsingSetupHs    Commands that Setup.hs Understands]
-   * [UsingTestsuite  How to Use the Testsuite]
+   * [DevelopersPage  Getting the sources]
+   * [UsingSetupHs    How to use Setup.hs]
+   * [UsingTestsuite  How to use the testsuite]
  * Development Ideas
    * [ImplicitArgumentsDesign  Implicit Arguments]
    * [GFConfigurationFiles  Configuration Files]
