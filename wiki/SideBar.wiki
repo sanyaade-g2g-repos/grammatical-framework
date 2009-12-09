@@ -1,5 +1,8 @@
  * [FAQ]
- * [DevelopersPage  Developers Page]
+ * Developers
+   * [DevelopersPage  Getting the Sources]
+   * [UsingSetupHs    Commands that Setup.hs Understands]
+   * [UsingTestsuite  How to Use the Testsuite]
  * Development Ideas
    * [ImplicitArgumentsDesign  Implicit Arguments]
    * [GFConfigurationFiles  Configuration Files]
