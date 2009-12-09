@@ -1,3 +1,4 @@
  * [FAQ]
  * Development Ideas
    * [ImplicitArgumentsDesign  Implicit Arguments]
+   * [GFConfigurationFiles  Configuration Files]
