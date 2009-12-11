@@ -3,6 +3,7 @@
    * [DevelopersPage  Building and Installing]
    * [UsingSetupHs    How to use Setup.hs]
    * [UsingTestsuite  How to use the testsuite]
+   * [LaunchWebDemos  Launching the Web applications]
  * Development Ideas
    * [ImplicitArgumentsDesign  Implicit Arguments]
    * [GFConfigurationFiles  Configuration Files]
