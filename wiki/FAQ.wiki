@@ -9,3 +9,7 @@ Q: I try to load a grammar but the compiler complains that it could not find som
 
 A: The compiler doesn't know where to find the module. You must specify the search path. There is a page about how to setup the [SearchPath search path].
 ----
+Q: Is it possible to use GF with languages other than Haskell?
+
+A: Yes. GF is a compiler which compiles grammars to format called PGF (Portable Grammar Format). The format is designed to be as simple as possible with the goal to make it easy to write interpreters in different languages. So far there are working interpreters in Haskell and !JavaScript. There is also a Web Service written in Haskell which you could call from almost any language. There was also an old interpreter written in Java but it worked only with now obsolete version GF. There was some preliminary work on interpreter for C as well.
+----
