@@ -1,15 +1,10 @@
-#summary How to use the testsuite
-
-*This page is still in development*
-
-
 = Running the testsuite =
 
 GF has testsuite. It is run with the following command:
 {{{
 $ runghc Setup.hs test
 }}}
-The testsuite architecture for GF is very simple but still very flexible.
+The testsuite architecture for GF is very simple but also very flexible.
 GF by itself is an interpreter and could execute commands in batch mode.
 This is everything that we need to organize a testsuite. The root of the 
 testsuite is the testsuite/ directory. It contains subdirectories which
