@@ -1,6 +1,6 @@
 #summary How to use Setup.hs
 
-*This page is still in development*
+In GF we use [http://www.haskell.org/cabal/ Cabal] as infrastructure for building the source code. Cabal is a Haskell library which is distributed together with GHC and we use it in the Setup.hs script. Setup.hs is the main program that we use in the compilation.
 
 == Configure ==
 
@@ -9,16 +9,12 @@ needed for GF. The configuration is started by the command:
 {{{
 $ runghc Setup.hs configure
 }}}
-The command {{{runghc}}} comes with the GHC compiler and is batch interpreter which executes
-the specified script without the need to compile it advance. Setup.hs is our compilation driver
-which is based on Cabal. If you don't see any error message from the above command then
-you have everything that is needed for GF. You can also add the option {{{-v}}} to see
-more details about the configuration.
+The command {{{runghc}}} comes with the GHC compiler and is batch interpreter which executes the specified script without the need to compile it advance. Setup.hs is our compilation driver which is based on Cabal. If you don't see any error message from the above command then you have everything that is needed for GF. You can also add the option {{{-v}}} to see more details about the configuration.
 
 == Build ==
 
 The build phase does two things. First it builds the GF compiler from the Haskell sources
-and after that it builds the GF Resource Grammar Library using the already build compiler.
+and after that it builds the GF Resource Grammar Library using the newly built compiler.
 The simplest command is:
 {{{
 $ runghc Setup.hs build
@@ -40,6 +36,12 @@ $ runghc Setup.hs build present
 Before to use this command make sure that the script lib/src/mkPresent has executable
 permissions on Linux.
 
+In similar way, this command:
+{{{
+$ runghc Setup.hs build minimal
+}}}
+will build only minimal version of the library i.e. version that includes only the basic grammatical constructions. 
+
 You could also control which languages you want to be recompiled by adding the option
 ```langs=list```. For example the following command will compile only the English and the Swedish
 language:
@@ -47,6 +49,12 @@ language:
 $ runghc Setup.hs build langs=Eng,Swe
 }}}
 
+There is also an option which compiles all resource libraries to a single PGF file:
+{{{
+$ runghc Setup.hs build rgl-pgf
+}}}
+Before to run this command you first have to have the libraries compiled by the simple build command i.e. run build without any options first and after that run the command above again.
+ 
 == Install ==
 
 After you have compiled GF you can install the binaries to make the system usable.
