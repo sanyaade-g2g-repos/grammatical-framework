@@ -23,5 +23,5 @@ A: There is an option to the Haskell runtime which controls the stack size. When
 {{{
 gf +RTS -K64M -RTS
 }}}
-The option -RTS is not obligatory if this is the last option in the command line. Here 64M means that you allocate 64 megabytes of memory for stack.
+The option -RTS is not obligatory if this is the last option in the command line. Here 64M means that you allocate 64 megabytes of memory for stack. You could experiment with different values.
 ----
