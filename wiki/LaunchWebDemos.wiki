@@ -2,7 +2,7 @@
 
 We use [http://www.lighttpd.net/ lighttpd] as web server and this is the one that we recommend. Previously we also tried Microsoft IIS and Apache but we found that lighttpd is easier to install and it has better support for [http://www.fastcgi.com/drupal/ FastCGI].
 
-The client side of the web applications is written using [http://code.google.com/intl/bg-BG/webtoolkit/ Google Web Toolkit] which you also need to download and install.
+The client side of the web applications is written using [http://code.google.com/intl/bg-BG/webtoolkit/ Google Web Toolkit] which you also need to download and install. We are still depending on version 1.5.3 of the toolkit so you need exactly this one.
 
 = Compilation =
 
@@ -35,6 +35,19 @@ Once you have compiled the PGF service you should compile the client side of als
 which compile the source of those applications. You must look at the beginning of the scripts, there are two environment variables that have to be set to the installation location of Google Web Toolkit. There is an example in the scripts.
 
 = Running =
+
+Before to run the applications you have to deploy some grammars. First you need file grammars.xml placed at
+{{{
+gf/src/server/gwt/www/grammars/grammars.xml
+}}}
+The file describes which grammars are available for the applications. An example content of the file is:
+{{{
+<grammars>
+   <grammar name="Foods.pgf"/>
+   <grammar name="Bronzeage.pgf"/>
+</grammars>
+}}}
+Later we might add other attributes here.
 
 When you have everything in place you can try to run the applications. From directory src/server you run:
 
