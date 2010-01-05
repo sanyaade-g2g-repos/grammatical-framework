@@ -4,6 +4,7 @@
    * [UsingSetupHs    How to use Setup.hs]
    * [UsingTestsuite  How to use the testsuite]
    * [LaunchWebDemos  Launching the Web applications]
+   * [SetupSyntaxEditor Setup the Syntax Editor]
  * Development Ideas
    * [ImplicitArgumentsDesign  Implicit Arguments]
    * [GFConfigurationFiles  Configuration Files]
