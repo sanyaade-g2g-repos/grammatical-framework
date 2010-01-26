@@ -7,6 +7,7 @@
  * Int32
  * VInt
  * String
+ * Float
  * List
 
 =PGF=
@@ -37,7 +38,7 @@
 || *type*       || *description*                            ||
 || `String`     || function name                            ||
 || `Type`       || function's type signature                ||
-|| `Int8`       || function's arrity                        ||
+|| `VInt`       || function's arrity                        ||
 || `[Equation]` || definitional equations for this function ||
 
 =!AbsCat=
@@ -48,7 +49,10 @@
 
 =Type=
 
-|| *type*     || *description*                    ||
+|| *type*         || *description*                      ||
+|| `[Hypo]`       || list of hypotheses for this type   ||
+|| `String`       || the name of the return category    ||
+|| `[Expression]` || arguments for the return category  ||
 
 =Hypo=
 
@@ -85,23 +89,77 @@
 
 =!PrintName=
 
-|| *type*        || *description*                 ||
+|| *type*   || *description*                                                          ||
+|| `String` || name of abstract function or category for which the print name applies ||
+|| `String` || the print name itself                                                  ||
 
 =Sequence=
 
-|| *type*        || *description*                 ||
+|| *type*     || *description*                                ||
+|| `[Symbol]` || list of symbols that constitute the sequence ||
+
+=Symbol=
+
+|| *type* || *description*                              ||
+|| `Int8` || tag which says what kind of symbol this is ||
+
+1. tag=1 or tag=2
+|| *type* || *description*     ||
+|| `VInt` || argument index    ||
+|| `VInt` || constituent index ||
+
+2. tag=3
+|| *type*       || *description*      ||
+|| `[String]`   || sequence of tokens ||
+
+3. tag=4
+|| *type*          || *description*      ||
+|| `[String]`      || sequence of tokens ||
+|| `[Alternative]` || sequence of tokens ||
+
+=Alternative=
+
+|| *type*        || *description*                                   ||
 
 =!CncFun=
 
-|| *type*        || *description*                 ||
+|| *type*        || *description*                                   ||
+|| `String`      || the name of the corresponding abstract function ||
+|| `[VInt]`      || list of indices into the sequences array        ||
 
 =Production=
 
-|| *type*        || *description*                 ||
+There are two kinds of productions:
+ * application of some concrete function to a list of arguments:
+   {{{A -> f[B,C]}}}
+   where `f` is the function, `B` and `C` are the arguments and A is 
+   the result category.
+
+ * coercion from one concrete category to another:
+   {{{A -> _[B]}}}
+   where `B` is the initial category and `A` is the final i.e. the
+   result category.
+
+|| *type*  || *description*                                  ||
+|| `VInt`  || the forest id of the result category           ||
+|| `Int8`  || tag which says what kind of production this is ||
+
+1. if tag==1 then the production is of application kind and there are two more fields:
+|| *type*   || *description*  ||
+|| `VInt`   || the index of the function in the functions array ||
+|| `[VInt]` || list of arguments. Each integer is a forest ids  ||
+
+2. if tag==2 then the production is coercion and there is one more field:
+|| *type*   || *description*                     ||
+|| `VInt`   || forest id of the initial category ||
 
 =!CncCat=
 
-|| *type*        || *description*                 ||
+|| *type*        || *description*                                   ||
+|| `String`      || the name of the corresponding concrete category ||
+|| `VInt`        || the first corresponding forest id               ||
+|| `VInt`        || the last corresponding forest id                ||
+|| `[String]`    || list of label names                             ||
 
 =Literal=
 
