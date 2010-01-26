@@ -115,7 +115,7 @@
 3. tag=4
 || *type*          || *description*      ||
 || `[String]`      || sequence of tokens ||
-|| `[Alternative]` || sequence of tokens ||
+|| `[Alternative]` || sequence of alternatives ||
 
 =Alternative=
 
