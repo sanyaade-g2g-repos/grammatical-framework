@@ -1,1 +1,108 @@
 #summary The PGF binary searialization is still under development
+
+=Basic Types=
+
+ * Int8
+ * Int16
+ * Int32
+ * VInt
+ * String
+ * List
+
+=PGF=
+
+|| *type*       || *description*                 ||
+|| `Int16`      || major PGF version             ||
+|| `Int16`      || minor PGF version             ||
+|| `[Flag]`     || flags for the whole grammar   ||
+|| `Abstract`   || abstract syntax               ||
+|| `[Concrete]` || list of all concrete syntaxes ||
+
+=Flag=
+
+|| *type*     || *description*                 ||
+|| `String`   || flag name                     ||
+|| `Literal`  || flag value                    ||
+
+=Abstract=
+
+|| *type*     || *description*                 ||
+|| `String`   || abstract syntax name          ||
+|| `[Flag]`   || flags for the abstract syntax ||
+|| `[AbsFun]` || list of abstract functions    ||
+|| `[AbsCat]` || list of abstract categories   ||
+
+=!AbsFun=
+
+|| *type*       || *description*                            ||
+|| `String`     || function name                            ||
+|| `Type`       || function's type signature                ||
+|| `Int8`       || function's arrity                        ||
+|| `[Equation]` || definitional equations for this function ||
+
+=!AbsCat=
+
+|| *type*       || *description*                        ||
+|| `String`     || category name                        ||
+|| `[Hypo]`     || list of hypotheses for this category ||
+
+=Type=
+
+|| *type*     || *description*                    ||
+
+=Hypo=
+
+|| *type*     || *description*                                  ||
+|| `BindType` || binding type                                   ||
+|| `String`   || variable name or `'_'` if no variable is bound ||
+|| `Type`     || the type of the variable                       ||
+
+=Equation=
+
+|| *type*       || *description*        ||
+|| `[Pattern]`  || sequence of patterns ||
+|| `Expression` || expression           ||
+
+=Pattern=
+
+|| *type*     || *description*        ||
+
+=Expression=
+
+|| *type*     || *description*        ||
+
+=Concrete=
+
+|| *type*         || *description*                                           ||
+|| `String`       || concrete syntax name                                    ||
+|| `[Flag]`       || flags for the concrete syntax                           ||
+|| `[PrintName]`  || list of all print names defined in this concrete syntax ||
+|| `[Sequence]`   || list of sequences                                       ||
+|| `[CncFun]`     || list of concrete functions                              ||
+|| `[Production]` || list of productions                                     ||
+|| `[CncCat]`     || list of concrete categories                             ||
+|| `VInt`         || total number of forest ids allocated for the grammar    ||
+
+=!PrintName=
+
+|| *type*        || *description*                 ||
+
+=Sequence=
+
+|| *type*        || *description*                 ||
+
+=!CncFun=
+
+|| *type*        || *description*                 ||
+
+=Production=
+
+|| *type*        || *description*                 ||
+
+=!CncCat=
+
+|| *type*        || *description*                 ||
+
+=Literal=
+
+|| *type*     || *description*                 ||
