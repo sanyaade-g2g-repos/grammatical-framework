@@ -4,7 +4,7 @@
 
  * Int8
  * Int16
- * VInt
+ * Int
  * String
  * Float
  * List
@@ -37,7 +37,7 @@
 || *type*       || *description*                            ||
 || `String`     || function name                            ||
 || `Type`       || function's type signature                ||
-|| `VInt`       || function's arrity                        ||
+|| `Int`        || function's arrity                        ||
 || `[Equation]` || definitional equations for this function ||
 
 =!AbsCat=
@@ -71,22 +71,22 @@
 || *type*      || *description*  ||
 || `Int8`      || pattern tag    ||
 
-1. tag=1 - application (`c p1 p2 ... pn`)
+1. tag=0 - application (`c p1 p2 ... pn`)
 || *type*      || *description*                          ||
 || `String`    || abstract function name                 ||
 || `[Pattern]` || list of sub patterns for the arguments ||
 
-2. tag=2 - literal (`"aa"`, `1`, `3.14`)
-|| *type*      || *description* ||
-|| `Literal`   || literal value ||
-
-3. tag=3 - variable
+3. tag=1 - variable
 || *type*      || *description* ||
 || `String`    || variable name ||
 
-4. tag=4 - wildcard (`_`). No more fields
+4. tag=2 - wildcard (`_`). No more fields
 
-5. tag=5 - pattern matching over implicit argument ({p})
+2. tag=3 - literal (`"aa"`, `1`, `3.14`)
+|| *type*      || *description* ||
+|| `Literal`   || literal value ||
+
+5. tag=4 - pattern matching over implicit argument ({p})
 || *type*      || *description* ||
 || `Pattern`   || variable name ||
 
@@ -96,39 +96,39 @@
 || *type*     || *description*  ||
 || `Int8`     || expression tag ||
 
-1. tag=1 - lambda abstraction (`\x -> ...`)
+1. tag=0 - lambda abstraction (`\x -> ...`)
 || *type*       || *description*                      ||
 || `BindType`   || expression tag                     ||
 || `String`     || variable name                      ||
 || `Expression` || the body of the lambda abstraction ||
 
-2. tag=2 - application (`f x`)
+2. tag=1 - application (`f x`)
 || *type*       || *description*                           ||
 || `Expression` || the left expression in the application  ||
 || `Expression` || the right expression in the application ||
 
-3. tag=3 - literal (`"aa"`, `1`, `3.14`)
+3. tag=2 - literal (`"aa"`, `1`, `3.14`)
 || *type*    || *description*             ||
 || `Literal` || the value of the literal  ||
 
-4. tag=4 - meta variable (`?0`,`?1`)
+4. tag=3 - meta variable (`?0`,`?1`)
 || *type* || *description*               ||
-|| `VInt` || the id of the meta variable ||
+|| `Int`  || the id of the meta variable ||
 
-5. tag=5 - abstract function name (`PredVP`, `IndefArt`)
+5. tag=4 - abstract function name (`PredVP`, `IndefArt`)
 || *type*   || *description*          ||
 || `String` || abstract function name ||
 
-6. tag=6 - variable
+6. tag=5 - variable
 || *type* || *description*                       ||
-|| `VInt` || the de Bruijn index of the variable ||
+|| `Int`  || the de Bruijn index of the variable ||
 
-7. tag=7 - expression with type annotation (`<e : t>`)
+7. tag=6 - expression with type annotation (`<e : t>`)
 || *type*       || *description*              ||
 || `Expression` || the annotated expression   ||
 || `Type`       || the type of the expression ||
 
-8. tag=8 - implicit argument (`{e}`)
+8. tag=7 - implicit argument (`{e}`)
 || *type*       || *description*                   ||
 || `Expression` || the expression for the argument ||
 
@@ -138,8 +138,8 @@
 || `Int8` || tag           ||
 
 The tag has two possible values:
- * tag=1, explicit argument
- * tag=2, implicit argument
+ * tag=0, explicit argument
+ * tag=1, implicit argument
 
 =Concrete=
 
@@ -151,7 +151,7 @@ The tag has two possible values:
 || `[CncFun]`     || list of concrete functions                              ||
 || `[Production]` || list of productions                                     ||
 || `[CncCat]`     || list of concrete categories                             ||
-|| `VInt`         || total number of forest ids allocated for the grammar    ||
+|| `Int`          || total number of forest ids allocated for the grammar    ||
 
 =!PrintName=
 
@@ -169,16 +169,16 @@ The tag has two possible values:
 || *type* || *description*                              ||
 || `Int8` || tag which says what kind of symbol this is ||
 
-1. tag=1 or tag=2
+1. tag=0 or tag=1
 || *type* || *description*     ||
-|| `VInt` || argument index    ||
-|| `VInt` || constituent index ||
+|| `Int`  || argument index    ||
+|| `Int`  || constituent index ||
 
-2. tag=3
+2. tag=2
 || *type*       || *description*      ||
 || `[String]`   || sequence of tokens ||
 
-3. tag=4
+3. tag=3
 || *type*          || *description*            ||
 || `[String]`      || sequence of tokens       ||
 || `[Alternative]` || sequence of alternatives ||
@@ -193,7 +193,7 @@ The tag has two possible values:
 
 || *type*        || *description*                                   ||
 || `String`      || the name of the corresponding abstract function ||
-|| `[VInt]`      || list of indices into the sequences array        ||
+|| `[Int]`       || list of indices into the sequences array        ||
 
 =Production=
 
@@ -209,24 +209,24 @@ There are two kinds of productions:
    result category.
 
 || *type*  || *description*                                  ||
-|| `VInt`  || the forest id of the result category           ||
+|| `Int`   || the forest id of the result category           ||
 || `Int8`  || tag which says what kind of production this is ||
 
-1. if tag==1 then the production is of application kind and there are two more fields:
+1. if tag=0 then the production is of application kind and there are two more fields:
 || *type*   || *description*  ||
-|| `VInt`   || the index of the function in the functions array ||
-|| `[VInt]` || list of arguments. Each integer is a forest ids  ||
+|| `Int`    || the index of the function in the functions array ||
+|| `[Int]`  || list of arguments. Each integer is a forest ids  ||
 
-2. if tag==2 then the production is coercion and there is one more field:
+2. if tag=1 then the production is coercion and there is one more field:
 || *type*   || *description*                     ||
-|| `VInt`   || forest id of the initial category ||
+|| `Int`    || forest id of the initial category ||
 
 =!CncCat=
 
 || *type*        || *description*                                   ||
 || `String`      || the name of the corresponding concrete category ||
-|| `VInt`        || the first corresponding forest id               ||
-|| `VInt`        || the last corresponding forest id                ||
+|| `Int`         || the first corresponding forest id               ||
+|| `Int`         || the last corresponding forest id                ||
 || `[String]`    || list of label names                             ||
 
 =Literal=
@@ -234,14 +234,14 @@ There are two kinds of productions:
 || *type* || *description* ||
 || `Int8` || literal type  ||
 
-1. type=1 - string
+1. type=0 - string
 || *type*   || *description* ||
 || `String` || value         ||
 
-2. type=2 - integer
+2. type=1 - integer
 || *type* || *description* ||
-|| `VInt` || value         ||
+|| `Int`  || value         ||
 
-3. type=3 - float
+3. type=2 - float
 || *type*  || *description* ||
 || `Float` || value         ||
