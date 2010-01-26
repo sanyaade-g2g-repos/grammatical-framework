@@ -4,7 +4,6 @@
 
  * Int8
  * Int16
- * Int32
  * VInt
  * String
  * Float
@@ -69,11 +68,78 @@
 
 =Pattern=
 
-|| *type*     || *description*        ||
+|| *type*      || *description*  ||
+|| `Int8`      || pattern tag    ||
+
+1. tag=1 - application (`c p1 p2 ... pn`)
+|| *type*      || *description*                          ||
+|| `String`    || abstract function name                 ||
+|| `[Pattern]` || list of sub patterns for the arguments ||
+
+2. tag=2 - literal (`"aa"`, `1`, `3.14`)
+|| *type*      || *description* ||
+|| `Literal`   || literal value ||
+
+3. tag=3 - variable
+|| *type*      || *description* ||
+|| `String`    || variable name ||
+
+4. tag=4 - wildcard (`_`). No more fields
+
+5. tag=5 - pattern matching over implicit argument ({p})
+|| *type*      || *description* ||
+|| `Pattern`   || variable name ||
+
 
 =Expression=
 
-|| *type*     || *description*        ||
+|| *type*     || *description*  ||
+|| `Int8`     || expression tag ||
+
+1. tag=1 - lambda abstraction (`\x -> ...`)
+|| *type*       || *description*                      ||
+|| `BindType`   || expression tag                     ||
+|| `String`     || variable name                      ||
+|| `Expression` || the body of the lambda abstraction ||
+
+2. tag=2 - application (`f x`)
+|| *type*       || *description*                           ||
+|| `Expression` || the left expression in the application  ||
+|| `Expression` || the right expression in the application ||
+
+3. tag=3 - literal (`"aa"`, `1`, `3.14`)
+|| *type*    || *description*             ||
+|| `Literal` || the value of the literal  ||
+
+4. tag=4 - meta variable (`?0`,`?1`)
+|| *type* || *description*               ||
+|| `VInt` || the id of the meta variable ||
+
+5. tag=5 - abstract function name (`PredVP`, `IndefArt`)
+|| *type*   || *description*          ||
+|| `String` || abstract function name ||
+
+6. tag=6 - variable
+|| *type* || *description*                       ||
+|| `VInt` || the de Bruijn index of the variable ||
+
+7. tag=7 - expression with type annotation (`<e : t>`)
+|| *type*       || *description*              ||
+|| `Expression` || the annotated expression   ||
+|| `Type`       || the type of the expression ||
+
+8. tag=8 - implicit argument (`{e}`)
+|| *type*       || *description*                   ||
+|| `Expression` || the expression for the argument ||
+
+=!BindType=
+
+|| *type* || *description* ||
+|| `Int8` || tag           ||
+
+The tag has two possible values:
+ * tag=1, explicit argument
+ * tag=2, implicit argument
 
 =Concrete=
 
@@ -113,13 +179,15 @@
 || `[String]`   || sequence of tokens ||
 
 3. tag=4
-|| *type*          || *description*      ||
-|| `[String]`      || sequence of tokens ||
+|| *type*          || *description*            ||
+|| `[String]`      || sequence of tokens       ||
 || `[Alternative]` || sequence of alternatives ||
 
 =Alternative=
 
-|| *type*        || *description*                                   ||
+|| *type*        || *description*                      ||
+|| `[String]`    ||                                    ||
+|| `[String]`    ||                                    ||
 
 =!CncFun=
 
@@ -163,4 +231,17 @@ There are two kinds of productions:
 
 =Literal=
 
-|| *type*     || *description*                 ||
+|| *type* || *description* ||
+|| `Int8` || literal type  ||
+
+1. type=1 - string
+|| *type*   || *description* ||
+|| `String` || value         ||
+
+2. type=2 - integer
+|| *type* || *description* ||
+|| `VInt` || value         ||
+
+3. type=3 - float
+|| *type*  || *description* ||
+|| `Float` || value         ||
