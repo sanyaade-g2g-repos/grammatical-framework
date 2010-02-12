@@ -29,6 +29,6 @@ After that all declarations are type checked. The type checking is done in depen
 
  * missing lindef declarations are automatically generated using the default strategy. (Why here?)
 
- * Uses call-by-name with nondeterminism
+ * Uses call-by-name with nondeterminism. The nondeterminism comes from the usage of variants. We use the same semantics as in [http://curry-language.org/ Curry].
 
 =PMCFG generation=
