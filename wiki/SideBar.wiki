@@ -9,3 +9,5 @@
  * Development Ideas
    * [ImplicitArgumentsDesign  Implicit Arguments]
    * [GFConfigurationFiles  Configuration Files]
+ * Compiler Internals
+   * [CompilationPhases  Overview of the Compilation Phases]
