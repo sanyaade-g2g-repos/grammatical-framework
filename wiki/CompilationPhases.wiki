@@ -2,7 +2,7 @@
 
 =Renaming=
 
- * Constructor Cn in the abstract syntax is replaced with Q/QC for global functions and with Vr for local variables. The local variables are represented with de Brujin indices. The Cn is not used further.
+ * Constructor `Cn` in the abstract syntax is replaced with `Q`/`QC` for global functions and with `Vr` for local variables. The local variables are represented with de Brujin indices. The `Cn` is not used further.
 
  * Ambiguous references are reported as warnings. The compiler picks the first choice and tries to compile with it. (Fishy?)
 
@@ -14,7 +14,7 @@ The first thing is to check whether:
 
  * for every _lin_ there is a corresponding _fun_ or _data_ definition. The same with _cat_ and _lincat_. Linearization definitions without corresponding match in the abstract syntax are ignored. A warning is printed.
 
- * for every abstract syntax category of function there is a corresponding in the concrete syntax. If there is missing _lincat_ then the default linearization type {s:Str} is inserted. If there is missing _lin_ and the target declaration category has linearization type {} then a default
+ * for every abstract syntax category of function there is a corresponding in the concrete syntax. If there is missing _lincat_ then the default linearization type `{s:Str}` is inserted. If there is missing _lin_ and the target declaration category has linearization type `{}` then a default
 {{{
 \_,_,..._ -> <>
 }}}
