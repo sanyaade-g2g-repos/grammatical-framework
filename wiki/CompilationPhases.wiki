@@ -1,3 +1,7 @@
+=Dependency Analyses=
+
+Traverses the dependencies of the top modules and determines which modules and in which order should be compiled. Circular dependences are not allowed and are reported as error.
+
 =Parsing=
 
 =Renaming=
