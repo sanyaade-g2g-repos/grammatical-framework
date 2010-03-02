@@ -1,0 +1,8 @@
+This is the basic list. It should be extended
+
+ # Add new language in the GF resource library
+ # Develop module in the resource grammar for expressing Times and Dates
+ # Import lexicon
+ # Work on web applications
+ # Work on Android
+ # Work on IDE 
