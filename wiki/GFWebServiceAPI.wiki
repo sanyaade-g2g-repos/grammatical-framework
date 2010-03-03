@@ -1,0 +1,5 @@
+=GF Web Service API=
+
+The GF Web Service is a small application which exposes the PGF API as Web Service. The application uses [http://www.fastcgi.com FastCGI] as communication protocol to talk with the web server. The data protocol that we use is [http://www.json.org/ JSON].
+
+The compiled GF grammars could be used in web applications in the same way as JSP, ASP or PHP pages are used. The compiled PGF file is just placed somewhere in the web site directory. When there is a request for access to a .pgf file then the web server redirects the request to the GF web service. The service knows how to load the grammar and interpret the parameters given in the URL.
