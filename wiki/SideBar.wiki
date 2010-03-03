@@ -4,7 +4,7 @@
    * [UsingSetupHs    How to use Setup.hs]
    * [UsingTestsuite  How to use the testsuite]
    * [LaunchWebDemos  Launching the Web applications]
-   * [LaunchWebDemos  GF Web Service API]
+   * [GFWebServiceAPI GF Web Service API]
    * [SetupSyntaxEditor Setup the Syntax Editor]
    * [PGFBinary       PGF file format]
  * Development Ideas
