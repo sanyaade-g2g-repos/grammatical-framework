@@ -16,6 +16,11 @@ where cmd is the name of the operation. Usually every operation also requires sp
 
 =Operations=
 
+==Grammar==
+
+|| Parameter || Description                       || Default      ||
+|| command   || should be 'grammar'               || -            ||
+
 ==Parsing==
 
 || Parameter || Description                       || Default      ||
