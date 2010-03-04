@@ -2,4 +2,14 @@
 
 The GF Web Service is a small application which exposes the PGF API as Web Service. The application uses [http://www.fastcgi.com FastCGI] as communication protocol to talk with the web server. The data protocol that we use is [http://www.json.org/ JSON].
 
-The compiled GF grammars could be used in web applications in the same way as JSP, ASP or PHP pages are used. The compiled PGF file is just placed somewhere in the web site directory. When there is a request for access to a .pgf file then the web server redirects the request to the GF web service. The service knows how to load the grammar and interpret the parameters given in the URL.
+A compiled GF grammars could be used in web applications in the same way as JSP, ASP or PHP pages are used. The compiled PGF file is just placed somewhere in the web site directory. When there is a request for access to a .pgf file then the web server redirects the request to the GF web service. The service knows how to load the grammar and interpret the parameters given in the URL.
+
+If my_grammar.pgf is a grammar placed in the root folder of the web site for localhost then the grammar could be accessed using this URL:
+
+`http://localhost/my_grammar.pgf`
+
+Since there aren't any parameters passed in this case, the web service will respond with some general information about the grammar, encoded in JSON format. To perform specific operation you have to tell what operation you want to perform. The operation is encoded in the parameter command i.e.:
+
+`http://localhost/my_grammar.pgf?command=cmd`
+
+where cmd is the name of the operation. Usually every operation also requires specific list of other arguments which are encoded as parameters as well.
