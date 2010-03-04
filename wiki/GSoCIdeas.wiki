@@ -1,15 +1,9 @@
 This is the basic list. It should be extended
 
  # Add new language in the GF resource library
-
  # Develop module in the resource grammar for expressing Times and Dates
-
  # Import lexicon [http://wold.livingsources.org/ LWT]
-
  # Create GF treebank
-
  # Work on web applications
-
  # Implement some applications for mobile phones with Google Android
-
  # Work on IDE for GF
