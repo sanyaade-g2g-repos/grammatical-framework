@@ -18,8 +18,59 @@ where cmd is the name of the operation. Usually every operation also requires sp
 
 ==Parsing==
 
+|| Parameter || Description                       || Default      ||
+|| command   || should be 'parse'                 || -            ||
+|| cat       || the start category for the parser || the default start category for the grammar ||
+|| input     || the string to be parsed           || empty string ||
+|| from      || language to use for parsing       || all languages in the grammar will be tried ||
+
 ==Linearization==
+
+|| Parameter || Description                           || Default      ||
+|| command   || should be 'linearize'                 || -            ||
+|| tree      || the abstract syntax tree to linearize || -            ||
+|| to        || language to use in the linearization  || linearizations for all languages in the grammar will be generated ||
+
+==Translation==
+
+|| Parameter || Description                       || Default      ||
+|| command   || should be 'translate'             || -            ||
+|| cat       || the start category for the parser || the default start category for the grammar ||
+|| input     || the string to be translated       || empty string ||
+|| from      || the input language                || all languages in the grammar will be tried ||
+|| to        || the target language               || linearizations for all languages in the grammar will be generated ||
 
 ==Random Generation==
 
+|| Parameter || Description                          || Default      ||
+|| command   || should be 'random'                   || -            ||
+|| cat       || the start category for the generator || the default start category for the grammar ||
+|| limit     || maximal number of trees generated    || 1 ||
+
 ==Word Completion==
+
+|| Parameter || Description                       || Default      ||
+|| command   || should be 'complete'              || -            ||
+|| cat       || the start category for the parser || the default start category for the grammar ||
+|| input     || the string to the left of the cursor that is already typed || empty string ||
+|| from      || language to use for parsing       || all languages in the grammar will be tried ||
+|| limit     || maximal number of trees generated    || all words will be returned ||
+
+==Abstract Syntax Tree Visualization==
+
+|| Parameter || Description                        || Default      ||
+|| command   || should be 'abstrtree'              || -            ||
+|| tree      || the abstract syntax tree to render || -            ||
+
+==Parse Tree Visualization==
+
+|| Parameter || Description                        || Default      ||
+|| command   || should be 'parsetree'              || -            ||
+|| tree      || the abstract syntax tree to render || -            ||
+|| from      || language to use in the rendering   || -            ||
+
+==Word Alignment Diagram==
+
+|| Parameter || Description                        || Default      ||
+|| command   || should be 'alignment'              || -            ||
+|| tree      || the abstract syntax tree to render || -            ||
