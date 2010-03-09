@@ -15,11 +15,15 @@ The candidate should propose a language which hi/she knows well and for which we
 
 ==Extensions to the Resource Grammar Library==
 
-There are some aspects of the everyday language which are still not covered by the resource library. For example we often find it useful to be able to express dates and times using the library. Unfortunately this is not supported yet. Another useful extension would be to have library of different kinds of greetings (i.e. hello, hi, good morning, good evening, welcome, etc) in all languages of the resource grammar.
+There are some aspects of the everyday language which are still not covered by the resource library. For example we often find it useful to be able to express dates and times using the library i.e. how would you say:
+
+The time is ten to three.
+
+in your native language? Unfortunately this is not supported yet. For some language pairs the translation is more than just word-by-word translation and actually it requires some simple math. Another useful extension would be to have library of different kinds of greetings (i.e. hello, hi, good morning, good evening, welcome, etc) in all languages of the resource grammar.
 
 It is desirable to cover as many languages as possible in this project. Candidates that can speak many languages will have an advantage. However one good aspect of this project is that you could find information about the syntax of dates and times in internet or in any textbook for learning the corresponding language. The same applies to the greetings. Part of the work will be to search for materials for the languages that the candidate doesn't know.
 
-Other extensions could be proposed and implemented during the project.
+Other extensions could be proposed and implemented during the project. For example by using the grammar for dates and times it is possible to implement grammar for arranging meetings which after that could be used for automatic extraction of the meeting schedule from an e-mail.
 
 ==Import of Lexicons==
 
@@ -54,6 +58,8 @@ This group of applications contains proposals for building concrete applications
 
 
 ==Integrated Development Environment for GF==
+
+In this project we want to implement a prototype of a development environment for GF. This will be a plugin to some existing and popular development environment like Eclipse, Visual Studio, Emacs, etc. The choice of the concrete development environment will be made in the beginning of the project after looking at the advantages and the disadvantages of the different choices.
 
 
 ==Compiler from GF to Prolog==
