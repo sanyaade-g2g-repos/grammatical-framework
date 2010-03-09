@@ -1,5 +1,11 @@
 This page is a list of project ideas for students willing to participate in Google Summer of Code 2010. The list is not final, we could add more ideas or modify some of the existing ones later. We see it as important, that all participants should enjoy the work that they are doing, so we could adjust the project's scope and goal after an interview with the candidates. However the projects should also be useful in the context of GF, so if the student has his/her idea for project, it will be reviewed by the GF developers.
 
+The project ideas are divided into two groups. The first group contains projects which are related to the creation of some reusable language resources while the second group has more traditional software projects i.e. concrete applications or some extensions to the GF compiler. 
+
+=Language Engineering Projects=
+
+Although the projects in this section will require programming, in some of the projects, we are not so interested in the code itself but in the output from the program. For example it might be necessary to write some program which converts some raw data to GF grammar. In this case we are interested in the generated GF code and not so much in the software that was used to generate the code. Some of the projects might require some knowledge in computational linguistics but this is not strictly necessary because it could just as well be learned during the project.
+
 ==Development of Resource Grammar for New Language==
 
 One of the most valuable resource in GF is the Resource Grammar Library. This is a library of grammars for currently 16 languages: Bulgarian, Catalan, Danish, Dutch, English, Finnish,
@@ -17,13 +23,39 @@ Other extensions could be proposed and implemented during the project.
 
 ==Import of Lexicons==
 
+In linguistics a lexicon is a collection of words in a given language together with some information about the usage of the words. In GF we are mostly interested in morphological lexicons i.e. lexicons that contain information about how a given word is inflected.
+
+The resource grammar library implements the most common syntactic constructions available in the different languages, but it provides very little information about the words used in the language. Basically there is only a small lexicon of only about 300 words which is used mostly for debugging purposes. In this project we aim at importing more lexical information in the library.
+
 There are three kinds of lexicons which we find interesting in GF:
- * large coverage lexicons
- * small multilingual lexicons [http://wold.livingsources.org/ LWT]
- * domain specific lexicons
+ * large coverage monolingual morphological lexicons - This are lexicons of about 50-80 thousand words which aim at having very good coverage for a single language. Such lexicons are used for example in the spell checkers for MS Words and Open Office. There are already large scale lexicons for three languages - Bulgarian, English and Swedish.
+
+ * small multilingual lexicons - There are also lexicons which are multilingual. In the multilingual lexicons the words in each language are aligned with the words in the other languages in a way which preserves the meaning. Such lexicons are very difficult to build and usually have limited coverage. Despite this having such a lexicon in the resource library is good for testing purposes. We already have small testing lexicon but it would be good to import other similar resources like [http://wold.livingsources.org/ LWT].
+
+ * domain specific lexicons - there are some domain specific lexicons which could still be reused in many applications. For example lexicons with country and city names, spelled in different languages, medical terms, chemical terminology, etc.
 
 
- # Create GF treebank
- # Work on web applications
- # Implement some applications for mobile phones with Google Android
- # Work on IDE for GF
+==GF Treebank==
+
+Until recently GF was used only for parsing with relatively small domain specific grammars. However now there is an efficient parsing algorithm for GF so it become feasible to think about large coverage parsers based on GF. The large coverage lexicons mentioned in the previous project are important step in this direction. Unfortunately this is not enough, we need some more information about the syntactic behavior of the words and some statistics about their usage. Fortunately this could be achieved by gathering statistics from different treebanks.
+
+In this project we will focus on English and we will use the [http://www.grsampson.net/RSue.html Susanne] treebank. Although this treebank is relatively small, it has the advantage that it is open-source. From the treebank we will extract statistics for the words from the large scale English lexicon that we already have imported in GF. There are several interesting things to extract - how often a given word is used as a noun, verb, etc; what kind of arguments the verbs have, i.e. does the verb require direct object or not (transitive/intransitive verb); how the behavior of the word depend on the context; how common some grammatical constructions are used compared to some other; ...
+
+The extracted statistics will be used to build statistical disambiguation system for the English resource grammar library.
+
+=Software Projects=
+
+This group of applications contains proposals for building concrete applications using GF or ideas for extensions in the GF compiler.
+
+==Web Applications==
+
+
+==Google Android Applications==
+
+
+==Integrated Development Environment for GF==
+
+
+==Compiler from GF to Prolog==
+
+==Framework for Annotations in GF==
