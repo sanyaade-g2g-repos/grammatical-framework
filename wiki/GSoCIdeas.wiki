@@ -1,8 +1,27 @@
-This is the basic list. It should be extended
+The page is a list of project ideas for students willing to participate in Google Summer of Code 2010. The list is not final, we could add more ideas or modify some of the existing ones later. We see it as important, that all participants should enjoy the work that they are doing, so we could adjust the project's scope and goal after an interview with the candidates. However the projects should also be useful in the context of GF, so if the student has his/her idea for project, it will be reviewed by the GF developers.
 
- # Add new language in the GF resource library
- # Develop module in the resource grammar for expressing Times and Dates
- # Import lexicon [http://wold.livingsources.org/ LWT]
+==Development of Resource Grammar for New Language==
+
+One of the most valuable resource in GF is the Resource Grammar Library. This is a library of grammars for currently 16 languages: Bulgarian, Catalan, Danish, Dutch, English, Finnish,
+French, German, Interlingua, Italian, Norwegian, Polish, Romanian, Russian, Spanish, Swedish. We always welcome contributions with grammars for new languages. Contrary to the usual, we do not require that the grammar developers for the Resource Grammar Library are experienced linguists. Our experience showed that it is much more valuable if the developer has good programming skills and it is just enough if he/she has good knowledge of the target language.
+
+The candidate should propose a language which hi/she knows well and for which we do not have grammar already. Usually the candidates suggest their native language but this is not a requirement. If the candidate is proficient enough in some second language then this could be an option as well. Some fragments of the grammars for Arabic, Turkish and Thai are already developed, so we welcome candidates willing to complete them.
+
+==Extensions to the Resource Grammar Library==
+
+There are some aspects of the everyday language which are still not covered by the resource library. For example we often find it useful to be able to express dates and times using the library. Unfortunately this is not supported yet. Another useful extension would be to have library of different kinds of greetings (i.e. hello, hi, good morning, good evening, welcome, etc) in all languages of the resource grammar.
+
+It is desirable to cover as many languages as possible in this project. Candidates that can speak many languages will have an advantage. However one good aspect of this project is that you could find information about the syntax of dates and times in internet or in any textbook for learning the corresponding language. The same applies to the greetings. Part of the work will be to search for materials for the languages that the candidate doesn't know.
+
+Other extensions could be proposed and implemented during the project.
+
+==Import of Lexicons==
+
+large coverage lexicons
+small multilingual lexicons [http://wold.livingsources.org/ LWT]
+domain specific lexicons
+
+
  # Create GF treebank
  # Work on web applications
  # Implement some applications for mobile phones with Google Android
