@@ -1,4 +1,4 @@
-The page is a list of project ideas for students willing to participate in Google Summer of Code 2010. The list is not final, we could add more ideas or modify some of the existing ones later. We see it as important, that all participants should enjoy the work that they are doing, so we could adjust the project's scope and goal after an interview with the candidates. However the projects should also be useful in the context of GF, so if the student has his/her idea for project, it will be reviewed by the GF developers.
+This page is a list of project ideas for students willing to participate in Google Summer of Code 2010. The list is not final, we could add more ideas or modify some of the existing ones later. We see it as important, that all participants should enjoy the work that they are doing, so we could adjust the project's scope and goal after an interview with the candidates. However the projects should also be useful in the context of GF, so if the student has his/her idea for project, it will be reviewed by the GF developers.
 
 ==Development of Resource Grammar for New Language==
 
