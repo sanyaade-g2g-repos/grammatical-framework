@@ -17,9 +17,10 @@ Other extensions could be proposed and implemented during the project.
 
 ==Import of Lexicons==
 
-large coverage lexicons
-small multilingual lexicons [http://wold.livingsources.org/ LWT]
-domain specific lexicons
+There are three kinds of lexicons which we find interesting in GF:
+ * large coverage lexicons
+ * small multilingual lexicons [http://wold.livingsources.org/ LWT]
+ * domain specific lexicons
 
 
  # Create GF treebank
