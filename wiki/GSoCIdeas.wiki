@@ -53,9 +53,11 @@ This group of applications contains proposals for building concrete applications
 
 ==Web Applications==
 
+There are several existing web-based user interfaces for GF. Some of them are written directly in `JavaScript`, some others are written in Java with [http://code.google.com/intl/bg-BG/webtoolkit/ Google Web Toolkit]. The different user interfaces has different advantages and disadvantages. In this project we want to unify them and create a library where the user interface could be customized for every specific application. It is also possible to implement some new demo applications. The project is suitable for students with experience in Web programming who are interested in how it is possible to use advanced natural language technologies on the Web.
 
 ==Google Android Applications==
 
+Mobile computing is a hot topic in the last years. There is already a work in progress project to port the GF interpreter to Java in order to use it on Google Android. This is still half the way to make GF usable on mobile phones. Students with interesting ideas for applications that involve translation and generation of natural language text on mobile phone are welcome to suggest a topic.
 
 ==Integrated Development Environment for GF==
 
