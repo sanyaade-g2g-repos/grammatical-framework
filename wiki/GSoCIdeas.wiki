@@ -58,4 +58,12 @@ This group of applications contains proposals for building concrete applications
 
 ==Compiler from GF to Prolog==
 
+The grammars in GF have the distinctive feature that they make clear separation between concrete syntax i.e. English, French, etc. and abstract syntax i.e. some pure semantic description of a sentence. The abstract syntax is based on Martin Löf's type theory but have the interesting characteristic that it is restricted to first-order types. According to the Curry-Howard correspondence every type corresponds to a predicate in logic. This let us to see the types in the abstract syntax as a Prolog program. In fact we need a little but more than what is possible to do in Prolog but fortunately there is a dialect of Prolog which already has all this extras - [http://www.lix.polytechnique.fr/~dale/lProlog/ λProlog].
+
+In this project we will generate λProlog programs from the definitions in the abstract syntax of GF. This will let us to use GF for simple logical reasoning and also we will be able to produce sentences in natural language which conforms to given semantic restrictions. This project would be interesting for students who has general interests in compilers for non-conventional programming languages.
+
+
 ==Framework for Annotations in GF==
+
+In this project we aim to extend the GF language in a way which will make it possible 
+to add custom information to every function or a category in a grammar. For example if someone wants to add statistical information to some function then he/she could do it without changing the core of the GF interpreter. For comparison in .Net a similar role is played by the attributes and in Java the equivalent are the recently added annotations. You could find information about the current design of the language extension [GFConfigurationFiles  here].
