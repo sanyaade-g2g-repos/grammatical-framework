@@ -10,6 +10,8 @@
  * Development Ideas
    * [ImplicitArgumentsDesign  Implicit Arguments]
    * [GFConfigurationFiles  Configuration Files]
-   * [GSoCIdeas Summer of Code Ideas]
+ * Google Summer of Code 2010
+   * [GSoCQuestionnaire Questionnaire for Applicants]
+   * [GSoCIdeas Project Ideas]
  * Compiler Internals
    * [CompilationPhases  Overview of the Compilation Phases]
