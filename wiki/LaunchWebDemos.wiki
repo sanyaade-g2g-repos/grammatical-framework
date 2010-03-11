@@ -12,7 +12,7 @@ runghc Setup.hs configure
 runghc Setup.hs build
 runghc Setup.hs install
 }}}
-in the root directory of GF.
+in the root directory of GF. For more information see [DevelopersPage here].
 
 = Compilation =
 
