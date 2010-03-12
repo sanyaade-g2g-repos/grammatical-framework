@@ -1,6 +1,6 @@
 =Questionnaire for Applicants=
 
- # Say something about yourself. We want to know about your programming skills and interests in computer science but we don't expect complete CV.
+ # Say something about yourself. We want to know about your programming skills and interests in computer science or computational linguistics but we don't expect complete CV.
  # How did you find GF?
  # How did you learned about the Google Summer of Code program for GF?
  # Do you have any previous experience with GF? What did you do?
