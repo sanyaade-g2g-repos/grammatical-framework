@@ -80,16 +80,24 @@
 || *type*      || *description* ||
 || `String`    || variable name ||
 
-4. tag=2 - wildcard (`_`). No more fields
+3. tag=2 - variable@pattern
+|| *type*      || *description* ||
+|| `String`    || variable name ||
+|| `Pattern`   || sub-pattern ||
 
-2. tag=3 - literal (`"aa"`, `1`, `3.14`)
+4. tag=3 - wildcard (`_`). No more fields
+
+2. tag=4 - literal (`"aa"`, `1`, `3.14`)
 || *type*      || *description* ||
 || `Literal`   || literal value ||
 
-5. tag=4 - pattern matching over implicit argument ({p})
+5. tag=5 - pattern matching over implicit argument ({p})
 || *type*      || *description* ||
 || `Pattern`   || variable name ||
 
+6. tag=6 - inaccessible pattern
+|| *type*      || *description* ||
+|| `Expr`      || the content of the inaccessible pattern ||
 
 =Expression=
 
