@@ -76,7 +76,7 @@
 || `String`    || abstract function name                 ||
 || `[Pattern]` || list of sub patterns for the arguments ||
 
-3. tag=1 - variable
+2. tag=1 - variable
 || *type*      || *description* ||
 || `String`    || variable name ||
 
@@ -87,15 +87,15 @@
 
 4. tag=3 - wildcard (`_`). No more fields
 
-2. tag=4 - literal (`"aa"`, `1`, `3.14`)
+5. tag=4 - literal (`"aa"`, `1`, `3.14`)
 || *type*      || *description* ||
 || `Literal`   || literal value ||
 
-5. tag=5 - pattern matching over implicit argument ({p})
+6. tag=5 - pattern matching over implicit argument ({p})
 || *type*      || *description* ||
 || `Pattern`   || variable name ||
 
-6. tag=6 - inaccessible pattern
+7. tag=6 - inaccessible pattern
 || *type*      || *description* ||
 || `Expr`      || the content of the inaccessible pattern ||
 
