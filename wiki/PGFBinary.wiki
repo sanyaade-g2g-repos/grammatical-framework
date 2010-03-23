@@ -45,6 +45,7 @@
 || *type*       || *description*                        ||
 || `String`     || category name                        ||
 || `[Hypo]`     || list of hypotheses for this category ||
+|| `[String]`   || list of functions for this category in source-code order ||
 
 =Type=
 
