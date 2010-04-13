@@ -15,8 +15,8 @@
 || `Int16`      || major PGF version             ||
 || `Int16`      || minor PGF version             ||
 || `[Flag]`     || flags for the whole grammar   ||
-|| `Abstract`   || abstract syntax               ||
-|| `[Concrete]` || list of all concrete syntaxes ||
+|| [#Abstract Abstract]   || abstract syntax               ||
+|| `[`[#Concrete Concrete]`]` || list of all concrete syntaxes ||
 
 =Flag=
 
