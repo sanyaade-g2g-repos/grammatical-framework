@@ -14,7 +14,7 @@
 || *type*       || *description*                 ||
 || `Int16`      || major PGF version             ||
 || `Int16`      || minor PGF version             ||
-|| `[Flag]`     || flags for the whole grammar   ||
+|| `[`[#Flag Flag]`]`     || flags for the whole grammar   ||
 || [#Abstract Abstract]   || abstract syntax               ||
 || `[`[#Concrete Concrete]`]` || list of all concrete syntaxes ||
 
@@ -22,50 +22,50 @@
 
 || *type*     || *description*                 ||
 || `String`   || flag name                     ||
-|| `Literal`  || flag value                    ||
+|| [#Literal Literal]  || flag value                    ||
 
 =Abstract=
 
 || *type*     || *description*                 ||
 || `String`   || abstract syntax name          ||
-|| `[Flag]`   || flags for the abstract syntax ||
-|| `[AbsFun]` || list of abstract functions    ||
-|| `[AbsCat]` || list of abstract categories   ||
+|| `[`[#Flag Flag]`]`   || flags for the abstract syntax ||
+|| `[`[#!AbsFun AbsFun]`]` || list of abstract functions    ||
+|| `[`[#!AbsCat AbsCat]`]` || list of abstract categories   ||
 
 =!AbsFun=
 
 || *type*       || *description*                            ||
 || `String`     || function name                            ||
-|| `Type`       || function's type signature                ||
+|| [#Type Type]       || function's type signature                ||
 || `Int`        || function's arrity                        ||
-|| `[Equation]` || definitional equations for this function ||
+|| `[`[#Equation Equation]`]` || definitional equations for this function ||
 
 =!AbsCat=
 
 || *type*       || *description*                        ||
 || `String`     || category name                        ||
-|| `[Hypo]`     || list of hypotheses for this category ||
-|| `[String]`   || list of functions for this category in source-code order ||
+|| `[`[#Hypo Hypo]`]`     || list of hypotheses for this category ||
+|| `[`String`]`   || list of functions for this category in source-code order ||
 
 =Type=
 
 || *type*         || *description*                      ||
-|| `[Hypo]`       || list of hypotheses for this type   ||
+|| `[`[#Hypo Hypo]`]`       || list of hypotheses for this type   ||
 || `String`       || the name of the return category    ||
-|| `[Expression]` || arguments for the return category  ||
+|| `[`[#Expression Expression]`]` || arguments for the return category  ||
 
 =Hypo=
 
-|| *type*     || *description*                                  ||
-|| `BindType` || binding type                                   ||
-|| `String`   || variable name or `'_'` if no variable is bound ||
-|| `Type`     || the type of the variable                       ||
+|| *type*                || *description*                                  ||
+|| [#!BindType BindType] || binding type                                   ||
+|| `String`              || variable name or `'_'` if no variable is bound ||
+|| [#Type Type]          || the type of the variable                       ||
 
 =Equation=
 
-|| *type*       || *description*        ||
-|| `[Pattern]`  || sequence of patterns ||
-|| `Expression` || expression           ||
+|| *type*                    || *description*        ||
+|| `[`[#Pattern Pattern]`]`  || sequence of patterns ||
+|| [#Expression Expression]  || expression           ||
 
 =Pattern=
 
@@ -75,7 +75,7 @@
 1. tag=0 - application (`c p1 p2 ... pn`)
 || *type*      || *description*                          ||
 || `String`    || abstract function name                 ||
-|| `[Pattern]` || list of sub patterns for the arguments ||
+|| `[`[#Pattern Pattern]`]` || list of sub patterns for the arguments ||
 
 2. tag=1 - variable
 || *type*      || *description* ||
@@ -84,21 +84,21 @@
 3. tag=2 - variable@pattern
 || *type*      || *description* ||
 || `String`    || variable name ||
-|| `Pattern`   || sub-pattern ||
+|| [#Pattern Pattern]   || sub-pattern ||
 
 4. tag=3 - wildcard (`_`). No more fields
 
 5. tag=4 - literal (`"aa"`, `1`, `3.14`)
 || *type*      || *description* ||
-|| `Literal`   || literal value ||
+|| [#Literal Litteral]   || literal value ||
 
 6. tag=5 - pattern matching over implicit argument ({p})
-|| *type*      || *description* ||
-|| `Pattern`   || variable name ||
+|| *type*               || *description* ||
+|| [#Pattern Pattern]   || variable name ||
 
 7. tag=6 - inaccessible pattern
-|| *type*      || *description* ||
-|| `Expr`      || the content of the inaccessible pattern ||
+|| *type*            || *description* ||
+|| [#Expr Expr]      || the content of the inaccessible pattern ||
 
 =Expression=
 
@@ -107,18 +107,18 @@
 
 1. tag=0 - lambda abstraction (`\x -> ...`)
 || *type*       || *description*                      ||
-|| `BindType`   || expression tag                     ||
+|| [#BindType BindType]   || expression tag                     ||
 || `String`     || variable name                      ||
-|| `Expression` || the body of the lambda abstraction ||
+|| [#Expression Expression] || the body of the lambda abstraction ||
 
 2. tag=1 - application (`f x`)
 || *type*       || *description*                           ||
-|| `Expression` || the left expression in the application  ||
-|| `Expression` || the right expression in the application ||
+|| [#Expression Expression] || the left expression in the application  ||
+|| [#Expression Expression] || the right expression in the application ||
 
 3. tag=2 - literal (`"aa"`, `1`, `3.14`)
 || *type*    || *description*             ||
-|| `Literal` || the value of the literal  ||
+|| [#Literal Literal] || the value of the literal  ||
 
 4. tag=3 - meta variable (`?0`,`?1`)
 || *type* || *description*               ||
@@ -134,12 +134,12 @@
 
 7. tag=6 - expression with type annotation (`<e : t>`)
 || *type*       || *description*              ||
-|| `Expression` || the annotated expression   ||
-|| `Type`       || the type of the expression ||
+|| [#Expression Expression] || the annotated expression   ||
+|| [#Type Type]       || the type of the expression ||
 
 8. tag=7 - implicit argument (`{e}`)
 || *type*       || *description*                   ||
-|| `Expression` || the expression for the argument ||
+|| [#Expression Expression] || the expression for the argument ||
 
 =!BindType=
 
@@ -154,12 +154,12 @@ The tag has two possible values:
 
 || *type*         || *description*                                           ||
 || `String`       || concrete syntax name                                    ||
-|| `[Flag]`       || flags for the concrete syntax                           ||
-|| `[PrintName]`  || list of all print names defined in this concrete syntax ||
-|| `[Sequence]`   || list of sequences                                       ||
-|| `[CncFun]`     || list of concrete functions                              ||
-|| `[Production]` || list of productions                                     ||
-|| `[CncCat]`     || list of concrete categories                             ||
+|| `[`[#Flag Flag]`]`       || flags for the concrete syntax                           ||
+|| `[`[#!PrintName PrintName]`]`  || list of all print names defined in this concrete syntax ||
+|| `[`[#Sequence Sequence]`]`   || list of sequences                                       ||
+|| `[`[#!CncFun CncFun]`]`     || list of concrete functions                              ||
+|| `[`[#Production Production]`]` || list of productions                                     ||
+|| `[`[#!CncCat CncCat]`]`     || list of concrete categories                             ||
 || `Int`          || total number of forest ids allocated for the grammar    ||
 
 =!PrintName=
@@ -171,7 +171,7 @@ The tag has two possible values:
 =Sequence=
 
 || *type*     || *description*                                ||
-|| `[Symbol]` || list of symbols that constitute the sequence ||
+|| `[`[#Symbol Symbol]`]` || list of symbols that constitute the sequence ||
 
 =Symbol=
 
@@ -190,7 +190,7 @@ The tag has two possible values:
 3. tag=3
 || *type*          || *description*            ||
 || `[String]`      || sequence of tokens       ||
-|| `[Alternative]` || sequence of alternatives ||
+|| `[`[#Alternative Alternative]`]` || sequence of alternatives ||
 
 =Alternative=
 
