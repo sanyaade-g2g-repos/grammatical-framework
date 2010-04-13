@@ -29,8 +29,8 @@
 || *type*     || *description*                 ||
 || `String`   || abstract syntax name          ||
 || `[`[#Flag Flag]`]`   || flags for the abstract syntax ||
-|| `[`[#!AbsFun AbsFun]`]` || list of abstract functions    ||
-|| `[`[#!AbsCat AbsCat]`]` || list of abstract categories   ||
+|| `[`[#AbsFun AbsFun]`]` || list of abstract functions    ||
+|| `[`[#AbsCat AbsCat]`]` || list of abstract categories   ||
 
 =!AbsFun=
 
@@ -57,7 +57,7 @@
 =Hypo=
 
 || *type*                || *description*                                  ||
-|| [#!BindType BindType] || binding type                                   ||
+|| [#BindType BindType] || binding type                                   ||
 || `String`              || variable name or `'_'` if no variable is bound ||
 || [#Type Type]          || the type of the variable                       ||
 
@@ -155,11 +155,11 @@ The tag has two possible values:
 || *type*         || *description*                                           ||
 || `String`       || concrete syntax name                                    ||
 || `[`[#Flag Flag]`]`       || flags for the concrete syntax                           ||
-|| `[`[#!PrintName PrintName]`]`  || list of all print names defined in this concrete syntax ||
+|| `[`[#PrintName PrintName]`]`  || list of all print names defined in this concrete syntax ||
 || `[`[#Sequence Sequence]`]`   || list of sequences                                       ||
-|| `[`[#!CncFun CncFun]`]`     || list of concrete functions                              ||
+|| `[`[#CncFun CncFun]`]`     || list of concrete functions                              ||
 || `[`[#Production Production]`]` || list of productions                                     ||
-|| `[`[#!CncCat CncCat]`]`     || list of concrete categories                             ||
+|| `[`[#CncCat CncCat]`]`     || list of concrete categories                             ||
 || `Int`          || total number of forest ids allocated for the grammar    ||
 
 =!PrintName=
