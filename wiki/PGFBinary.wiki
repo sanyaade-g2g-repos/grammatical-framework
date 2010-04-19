@@ -38,7 +38,8 @@
 || `String`     || function name                            ||
 || [#Type Type]       || function's type signature                ||
 || `Int`        || function's arrity                        ||
-|| `[`[#Equation Equation]`]` || definitional equations for this function ||
+|| `Int8`       || if this is 0 the function is constructor and doesn't have equations ||
+|| `[`[#Equation Equation]`]` || definitional equations for this function if this is not constructor ||
 
 =!AbsCat=
 
