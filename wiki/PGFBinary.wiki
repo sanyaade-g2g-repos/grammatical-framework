@@ -159,7 +159,7 @@ The tag has two possible values:
 || `[`[#PrintName PrintName]`]`  || list of all print names defined in this concrete syntax ||
 || `[`[#Sequence Sequence]`]`   || list of sequences                                       ||
 || `[`[#CncFun CncFun]`]`     || list of concrete functions                              ||
-|| `[`[#Production Production]`]` || list of productions                                     ||
+|| `[`[#ProductionSet ProductionSet]`]` || list of production sets                                     ||
 || `[`[#CncCat CncCat]`]`     || list of concrete categories                             ||
 || `Int`          || total number of forest ids allocated for the grammar    ||
 
@@ -205,6 +205,14 @@ The tag has two possible values:
 || `String`      || the name of the corresponding abstract function ||
 || `[Int]`       || list of indices into the sequences array        ||
 
+=!ProductionSet=
+
+Every production set groups all productions that have one and the same result category.
+
+|| *type*         || *description*                         ||
+|| `Int`          || the forest id of the result category  ||
+|| `[`[#Production Production]`]` || list of productions for this category ||
+
 =Production=
 
 There are two kinds of productions:
@@ -218,14 +226,12 @@ There are two kinds of productions:
    where `B` is the initial category and `A` is the final i.e. the
    result category.
 
-|| *type*  || *description*                                  ||
-|| `Int`   || the forest id of the result category           ||
-|| `Int8`  || tag which says what kind of production this is ||
+Every production starts with a tag (`Int8`) which says what kind of production this is
 
 1. if tag=0 then the production is of application kind and there are two more fields:
 || *type*   || *description*  ||
 || `Int`    || the index of the function in the functions array ||
-|| `[Int]`  || list of arguments. Each integer is a forest ids  ||
+|| `[Int]`  || list of arguments. Each integer is a forest id   ||
 
 2. if tag=1 then the production is coercion and there is one more field:
 || *type*   || *description*                     ||
