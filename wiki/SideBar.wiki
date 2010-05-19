@@ -12,7 +12,7 @@
    * [GFConfigurationFiles  Configuration Files]
  * Compiler Internals
    * [CompilationPhases  Overview of the Compilation Phases]
-   * [BracketingAPI] Bracketing API
+   * [BracketingAPI Bracketing API]
 <wiki:comment>
  * Google Summer of Code 2011
    * [GSoCQuestionnaire Questionnaire for Applicants]
