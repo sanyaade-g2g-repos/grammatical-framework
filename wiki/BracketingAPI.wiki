@@ -38,7 +38,7 @@ Lang> p -cat=S "I saw the man with the telescope" | l -bracket -lang=LangEng
 
 When the input is not complete then only those phrases which are unambiguous and are complete are marked. If there isn't any top-level bracket then a new artificial phrase with category `_` is added. For example the bracketing for the empty string is `(_)`.
 
-When the input contains parse error then the returned bracketed string contains only the tokens up to the spot where the error is. Calculating the length of the bracketed string is the easiest way to find the error location.
+When the input contains syntax error then the returned bracketed string contains only the tokens up to the spot where the error is. Calculating the length of the bracketed string is the easiest way to find the error location.
 
 The bracketed string is actually representation of the parse tree (or the intersection of all trees) for a given string and could be rendered with Graphviz:
 {{{
