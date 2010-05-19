@@ -59,7 +59,6 @@ main = do
   let (_,bs) = parse_ pgf (fromJust $ readLanguage "LangEng") (fromJust $ readType "Phr") sent
   putStrLn (showBracketedString bs)
   putStrLn (translate pgf bs)
-  return ()
 
 translate pgf (Leaf w) = w
 translate pgf (Bracket _ _ _ es bss) =
