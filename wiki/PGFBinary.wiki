@@ -240,7 +240,7 @@ Every production starts with a tag (`Int8`) which says what kind of production t
 =!CncCat=
 
 || *type*        || *description*                                   ||
-|| `String`      || the name of the corresponding concrete category ||
+|| `String`      || the name of the corresponding abstract category ||
 || `Int`         || the first corresponding forest id               ||
 || `Int`         || the last corresponding forest id                ||
 || `[String]`    || list of label names                             ||
