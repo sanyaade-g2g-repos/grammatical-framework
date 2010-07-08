@@ -58,11 +58,12 @@ This command parses a string and returns a list of abstract syntax trees.
 || from      || language to use for parsing       || all languages in the grammar will be tried ||
 
 ===Output===
-List of objects where every object represents one possible analyze of the input string. The objects have two fields:
+List of objects where every object represents the analyzes for every input language. The objects have three fields:
 
-|| Field  || Description                               ||
-|| from   || the concrete language used in the parsing ||
-|| tree   || abstract syntax tree                      ||
+|| Field    || Description                               ||
+|| from     || the concrete language used in the parsing ||
+|| brackets || the bracketed string from the parser      ||
+|| trees    || list of abstract syntax trees             ||
 
 ----
 
@@ -100,10 +101,14 @@ The translation is a two step process. First the input sentence is parsed with t
 The output is a list of objects with these fields:
 || Field          || Description                               ||
 || from           || the concrete language used in the parsing ||
+|| brackets       || the bracketed string from the parser      ||
+|| translations   || list of translations                      ||
+
+Every translation is an object with two fields:
 || tree           || abstract syntax tree                      ||
 || linearizations || list of linearizations                    ||
 
-Every linearization is a object with two fields:
+Every linearization is an object with two fields:
 || Field          || Description                                     ||
 || to             || the concrete language used in the linearization ||
 || text           || the sentence produced                           ||
