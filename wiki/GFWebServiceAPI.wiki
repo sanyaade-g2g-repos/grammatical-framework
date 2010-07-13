@@ -60,10 +60,19 @@ This command parses a string and returns a list of abstract syntax trees.
 ===Output===
 List of objects where every object represents the analyzes for every input language. The objects have three fields:
 
-|| Field    || Description                               ||
-|| from     || the concrete language used in the parsing ||
-|| brackets || the bracketed string from the parser      ||
-|| trees    || list of abstract syntax trees             ||
+|| Field      || Description                               ||
+|| from       || the concrete language used in the parsing ||
+|| brackets   || the bracketed string from the parser      ||
+|| trees      || list of abstract syntax trees             ||
+|| typeErrors || list of errors from the type checker      ||
+
+The abstract syntax trees are sent as plain strings. The type errors are objects with two fields:
+
+|| Field      || Description                               ||
+|| fid        || forest id which points to a bracket in the bracketed string where the error occurs ||
+|| msg        || the text message for the error            ||
+
+The current implementation either returns a list of abstract syntax trees or a list of type errors. By checking whether the field trees is not null we check whether the type checking was successful.
 
 ----
 
@@ -103,6 +112,7 @@ The output is a list of objects with these fields:
 || from           || the concrete language used in the parsing ||
 || brackets       || the bracketed string from the parser      ||
 || translations   || list of translations                      ||
+|| typeErrors     || list of errors from the type checker      ||
 
 Every translation is an object with two fields:
 || tree           || abstract syntax tree                      ||
@@ -112,6 +122,14 @@ Every linearization is an object with two fields:
 || Field          || Description                                     ||
 || to             || the concrete language used in the linearization ||
 || text           || the sentence produced                           ||
+
+The type errors are objects with two fields:
+
+|| Field      || Description                               ||
+|| fid        || forest id which points to a bracket in the bracketed string where the error occurs ||
+|| msg        || the text message for the error            ||
+
+The current implementation either returns a list of translations or a list of type errors. By checking whether the field translations is not null we check whether the type checking was successful.
 
 ----
 
