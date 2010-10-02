@@ -47,7 +47,7 @@
 || *type*       || *description*                        ||
 || `String`     || category name                        ||
 || `[`[#Hypo Hypo]`]`     || list of hypotheses for this category ||
-|| `[`CatFun`]`   || list of functions for this category in source-code order ||
+|| `[`[#CatFun CatFun]`]`   || list of functions for this category in source-code order ||
 
 =!CatFun=
 
