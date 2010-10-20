@@ -273,13 +273,20 @@ There are two kinds of productions:
 Every production starts with a tag (`Int8`) which says what kind of production this is
 
 1. if tag=0 then the production is of application kind and there are two more fields:
-|| *type*   || *description*  ||
-|| `Int`    || the index of the function in the functions array ||
-|| `[Int]`  || list of arguments. Each integer is a forest id   ||
+|| *type*              || *description*  ||
+|| `Int`               || the index of the function in the functions array ||
+|| `[`[#!PArg PArg]`]` || list of arguments.   ||
 
 2. if tag=1 then the production is coercion and there is one more field:
 || *type*   || *description*                     ||
 || `Int`    || forest id of the initial category ||
+
+=PArg=
+
+A PArg is a productions argument.
+|| *type*  || *description*  ||
+|| `[Int]` ||  ||
+|| `Int`   || Category  ||
 
 =!CncCat=
 
