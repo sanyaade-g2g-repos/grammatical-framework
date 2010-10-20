@@ -183,28 +183,57 @@ The tag has two possible values:
 
 =Symbol=
 
-|| *type* || *description*                              ||
-|| `Int8` || tag which says what kind of symbol this is ||
+Symbols are the terminals and non-terminals of the grammar. There are different kind os symbols (terminals, non terminals, variables...). the first byte is a tag indicating the kind of symbol.
 
-1. tag=0 or tag=1
-|| *type* || *description*     ||
+== Category ==
+# 1. tag=0 or tag=1
+
+This is the main non-terminal. It is represented by two integers : the  argument index is the index of this category in the functions arguments and the constituent index is the index of the constituent of the category which is used in this position.
+
+|| *type* || *description*                              ||
+|| `Int8` || Tag which says what kind of symbol this is. *tag=1* ||
 || `Int`  || argument index    ||
 || `Int`  || constituent index ||
 
-2. tag=2
-|| *type*       || *description*      ||
-|| `[String]`   || sequence of tokens ||
+== Variables ==
 
-3. tag=3
+TODO
+
+|| *type* || *description*                              ||
+|| `Int8` || Tag which says what kind of symbol this is. *tag=2* ||
+|| `Int`  || ||
+|| `Int`  || ||
+
+== Tokens ==
+
+
+This is the main terminal symbol. it represents a list of tokens.
+The reason it is a list and not a single token is to be consistent with the other kind of terminal, the `pre` construct. The possibility of having multiple token in a single symbol forces the parser to keeps a trie of future agendas.
+
+|| *type*     || *description*      ||
+|| `Int8`     || Tag which says what kind of symbol this is. *tag=3* ||
+|| `[String]` || sequence of tokens ||
+
+== Token with alternatives ==
+
+This is the second kind of terminal symbol. It represents the `pre` construct in the gf source language. The first list of strings is the default list of tokens (used if none of the prefixes matches.) The [#Alternative Alternatives] are the others possibilitiesm each associated with a prefix that should match the following tokens.
+
 || *type*          || *description*            ||
+|| `Int8`          || Tag which says what kind of symbol this is. *tag=4* ||
 || `[String]`      || sequence of tokens       ||
 || `[`[#Alternative Alternative]`]` || sequence of alternatives ||
 
 =Alternative=
 
-|| *type*        || *description*                      ||
-|| `[String]`    ||                                    ||
-|| `[String]`    ||                                    ||
+Alternatives are used in the `pre` construct in the gf language. For example, if the following construct is present in the source : 
+
+`pre { beau ; bel / ami}`
+
+then the pair `bel / ami` will be one alternative, represented by the pair `(["bel"],["ami"])`
+
+|| *type*        || *description*                                ||
+|| `[String]`    || The tokens to use if the prefix matches      ||
+|| `[String]`    || The prefix matched with the following tokens ||
 
 =!CncFun=
 
