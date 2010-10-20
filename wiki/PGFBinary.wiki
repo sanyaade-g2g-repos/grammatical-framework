@@ -186,14 +186,22 @@ The tag has two possible values:
 Symbols are the terminals and non-terminals of the grammar. There are different kind os symbols (terminals, non terminals, variables...). the first byte is a tag indicating the kind of symbol.
 
 == Category ==
-# 1. tag=0 or tag=1
 
 This is the main non-terminal. It is represented by two integers : the  argument index is the index of this category in the functions arguments and the constituent index is the index of the constituent of the category which is used in this position.
 
 || *type* || *description*                              ||
-|| `Int8` || Tag which says what kind of symbol this is. *tag=1* ||
+|| `Int8` || Tag which says what kind of symbol this is. *tag=0* ||
 || `Int`  || argument index    ||
 || `Int`  || constituent index ||
+
+== SymLit ==
+
+TODO
+
+|| *type* || *description*                              ||
+|| `Int8` || Tag which says what kind of symbol this is. *tag=1* ||
+|| `Int`  ||     ||
+|| `Int`  ||     ||
 
 == Variables ==
 
