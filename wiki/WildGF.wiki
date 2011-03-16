@@ -1,0 +1,14 @@
+#summary One-sentence summary of this page.
+
+= Prehistory =
+
+* Focus on a large coverage Swedish grammar and a robust parser
+
+Håkan did some preliminary investigations with GF on Talbanken. He tried to parse the treebank directly but the parser failed for almost all sentences because:
+    * there are many *missing words* - We need better import of SALDO to GF. I did my own conversion tool but it has bugs and as a result some words are missing (Thanks Dana for finding it!).
+
+    * Swedish Resource Grammar doesn't know anything about *compound words*
+
+    * Not all grammatical constructions are covered
+
+He is not working on this anymore!
