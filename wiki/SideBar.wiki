@@ -15,6 +15,8 @@
    * [BracketingAPI Bracketing API]
  * Examples
    * [NLG  Natural Language Generation]
+ * Funding opportunities
+   * [IndiaCoop Cooperation with India]
 <wiki:comment>
  * Google Summer of Code 2011
    * [GSoCQuestionnaire Questionnaire for Applicants]
