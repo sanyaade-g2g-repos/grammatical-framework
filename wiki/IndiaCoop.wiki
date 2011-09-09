@@ -1,0 +1,16 @@
+#summary One-sentence summary of this page.
+#labels funding
+
+= Introduction =
+
+Some funding opportunity for work with India at the EU level.
+
+*Responsible person*: Shafqat.
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
