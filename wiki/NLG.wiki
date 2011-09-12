@@ -40,7 +40,7 @@ UttS (forall (\v0 -> exists (\v1 -> love v0 v1)))
 
 We can go in the opposite direction too, i.e. from semantics to natural language. For example:
 {{{
-> gt -cat="S (and (smart john) (smart mary))" -depth=7 | l
+> gt -cat="S (and (smart john) (smart mary))" -depth=8 | l
 John is smart and Mary is smart
 John and Mary are smart
 }}}
