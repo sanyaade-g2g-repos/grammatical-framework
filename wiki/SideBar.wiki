@@ -17,6 +17,8 @@
    * [NLG  Natural Language Generation]
  * Funding opportunities
    * [IndiaCoop Cooperation with India]
+   * [Meetings]
+
 <wiki:comment>
  * Google Summer of Code 2011
    * [GSoCQuestionnaire Questionnaire for Applicants]
