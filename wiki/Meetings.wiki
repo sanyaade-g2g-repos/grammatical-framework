@@ -1,6 +1,5 @@
 
-
-Here are the minutes of the meeting held to discuss potential cooperating institutes and projects. The purpose is to explore the possibilities of cooperation, and then write a project proposal. The plan is to submit the proposal for funding under the call FP7-ICT-2011-9 (call to be published).
+Here are the minutes of the meeting held to discuss potential cooperating institutes and projects. 
 
     
 *Place :* Aarne’s office
@@ -19,8 +18,6 @@ Potential Projects
 ||4|| ||Sanskrit|| ||	
 ||5|| ||Multilingual Railway Management System|| ||	
 ||6|| ||Medication to rural people	|| ||
-
-
 
 
 
