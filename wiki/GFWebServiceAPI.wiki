@@ -190,7 +190,7 @@ Byy default, the output is an image in PNG format. The content-type is set to 'i
 <img src="http://localhost/my_grammar.pgf?command=abstrtree&tree=..."/>
 }}}
 
-The output can also be in svg ('image/svg+xml') or gv (graphviz) format by setting the 'format' option
+The output can also be in gif ('image/gif'), svg ('image/svg+xml') or gv (graphviz) format by setting the 'format' option
 
 ----
 
@@ -212,7 +212,7 @@ By default, the output is an image in PNG format. The content-type is set to 'im
 <img src="http://localhost/my_grammar.pgf?command=parsetree&tree=..."/>
 }}}
 
-The output can also be in svg ('image/svg+xml') or gv (graphviz) format by setting the 'format' option
+The output can also be in gif ('image/gif'), svg ('image/svg+xml') or gv (graphviz) format by setting the 'format' option
 
 ----
 
@@ -233,4 +233,4 @@ By default, the output is an image in PNG format. The content-type is set to 'im
 <img src="http://localhost/my_grammar.pgf?command=alignment&tree=..."/>
 }}}
 
-The output can also be in svg ('image/svg+xml') or gv (graphviz) format by setting the 'format' option
+The output can also be in gif ('image/gif'), svg ('image/svg+xml') or gv (graphviz) format by setting the 'format' option
