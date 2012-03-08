@@ -181,13 +181,16 @@ This command renders an abstract syntax tree into image in PNG format.
 || Parameter || Description                        || Default      ||
 || command   || should be 'abstrtree'              || -            ||
 || tree      || the abstract syntax tree to render || -            ||
+|| format    || output format (gf>3.3.3)           || png          ||
 
 ===Output===
-The output is an image in PNG format. The content-type is set to 'image/png', so the easiest way to visualize the generated image is to add HTML element <img/> which points to URL for the visualization command i.e.:
+Byy default, the output is an image in PNG format. The content-type is set to 'image/png', so the easiest way to visualize the generated image is to add HTML element <img/> which points to URL for the visualization command i.e.:
 
 {{{
 <img src="http://localhost/my_grammar.pgf?command=abstrtree&tree=..."/>
 }}}
+
+The output can also be in svg ('image/svg+xml') or gv (graphviz) format by setting the 'format' option
 
 ----
 
@@ -200,13 +203,16 @@ This command renders the parse tree that corresponds to a specific abstract synt
 || command   || should be 'parsetree'              || -            ||
 || tree      || the abstract syntax tree to render || -            ||
 || from      || language to use in the rendering   || -            ||
+|| format    || output format (gf>3.3.3)           || png          ||
 
 ===Output===
-The output is an image in PNG format. The content-type is set to 'image/png', so the easiest way to visualize the generated image is to add HTML element <img/> which points to URL for the visualization command i.e.:
+By default, the output is an image in PNG format. The content-type is set to 'image/png', so the easiest way to visualize the generated image is to add HTML element <img/> which points to URL for the visualization command i.e.:
 
 {{{
 <img src="http://localhost/my_grammar.pgf?command=parsetree&tree=..."/>
 }}}
+
+The output can also be in svg ('image/svg+xml') or gv (graphviz) format by setting the 'format' option
 
 ----
 
@@ -218,10 +224,13 @@ This command renders the word alignment diagram for some sentence and all langua
 || Parameter || Description                        || Default      ||
 || command   || should be 'alignment'              || -            ||
 || tree      || the abstract syntax tree to render || -            ||
+|| format    || output format (gf>3.3.3)           || png          ||
 
 ===Output===
-The output is an image in PNG format. The content-type is set to 'image/png', so the easiest way to visualize the generated image is to add HTML element <img/> which points to URL for the visualization command i.e.:
+By default, the output is an image in PNG format. The content-type is set to 'image/png', so the easiest way to visualize the generated image is to add HTML element <img/> which points to URL for the visualization command i.e.:
 
 {{{
 <img src="http://localhost/my_grammar.pgf?command=alignment&tree=..."/>
 }}}
+
+The output can also be in svg ('image/svg+xml') or gv (graphviz) format by setting the 'format' option
