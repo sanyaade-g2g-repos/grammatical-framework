@@ -1,6 +1,6 @@
  * [FAQ]
  * Developers
-   * [http://www.grammaticalframework.org/doc/gf-developers.html GF Developers Guide
+   * [http://www.grammaticalframework.org/doc/gf-developers.html GF Developers Guide]
    * [DevelopersPage  Building and Installing]
    * [UsingSetupHs    How to use Setup.hs]
    * [UsingTestsuite  How to use the testsuite]
