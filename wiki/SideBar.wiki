@@ -1,9 +1,6 @@
  * [FAQ]
  * Developers
    * [http://www.grammaticalframework.org/doc/gf-developers.html GF Developers Guide]
-   * [DevelopersPage  Building and Installing]
-   * [UsingSetupHs    How to use Setup.hs]
-   * [UsingTestsuite  How to use the testsuite]
    * [LaunchWebDemos  Launching the Web applications]
    * [GFWebServiceAPI GF Web Service API]
    * [SetupSyntaxEditor Setup the Syntax Editor]
@@ -24,4 +21,7 @@
  * Google Summer of Code 2011
    * [GSoCQuestionnaire Questionnaire for Applicants]
    * [GSoCIdeas Project Ideas]
+   * [DevelopersPage  Building and Installing]
+   * [UsingSetupHs    How to use Setup.hs]
+   * [UsingTestsuite  How to use the testsuite]
 </wiki:comment>
