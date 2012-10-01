@@ -51,11 +51,12 @@ The language codes should be specified in the grammar because they are used to i
 This command parses a string and returns a list of abstract syntax trees.
 
 ===Input===
-|| Parameter || Description                       || Default      ||
-|| command   || should be 'parse'                 || -            ||
-|| cat       || the start category for the parser || the default start category for the grammar ||
-|| input     || the string to be parsed           || empty string ||
-|| from      || language to use for parsing       || all languages in the grammar will be tried ||
+|| Parameter || Description                                  || Default      ||
+|| command   || should be 'parse'                            || -            ||
+|| cat       || the start category for the parser            || the default start category for the grammar ||
+|| input     || the string to be parsed                      || empty string ||
+|| from      || language to use for parsing                  || all languages in the grammar will be tried ||
+|| limit     || limit how many trees are returned (gf>3.3.3) || no limit is applied ||
 
 ===Output===
 List of objects where every object represents the analyzes for every input language. The objects have three fields:
@@ -104,6 +105,7 @@ The translation is a two step process. First the input sentence is parsed with t
 || input     || the input string to be translated || empty string ||
 || from      || the source language               || all languages in the grammar will be tried ||
 || to        || the target language               || linearizations for all languages in the grammar will be generated ||
+|| limit     || limit how many parse trees are used (gf>3.3.3) || no limit is applied ||
 
 ===Output===
 
