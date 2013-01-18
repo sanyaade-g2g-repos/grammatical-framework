@@ -55,7 +55,7 @@ This command parses a string and returns a list of abstract syntax trees.
 || command   || should be 'parse'                            || -            ||
 || cat       || the start category for the parser            || the default start category for the grammar ||
 || input     || the string to be parsed                      || empty string ||
-|| from      || language to use for parsing                  || all languages in the grammar will be tried ||
+|| from      || the name of the concrete syntax to use for parsing || all languages in the grammar will be tried ||
 || limit     || limit how many trees are returned (gf>3.3.3) || no limit is applied ||
 
 ===Output===
@@ -85,7 +85,7 @@ The command takes an abstract syntax tree and produces string in the specified l
 || Parameter || Description                           || Default      ||
 || command   || should be 'linearize'                 || -            ||
 || tree      || the abstract syntax tree to linearize || -            ||
-|| to        || language to use in the linearization  || linearizations for all languages in the grammar will be generated ||
+|| to        || the name of the concrete syntax to use in the linearization  || linearizations for all languages in the grammar will be generated ||
 
 ===Output===
 || Field  || Description                                      ||
@@ -164,7 +164,7 @@ Word completion is a special case of parsing. If there is an incomplete sentence
 || command   || should be 'complete'              || -            ||
 || cat       || the start category for the parser || the default start category for the grammar ||
 || input     || the string to the left of the cursor that is already typed || empty string ||
-|| from      || language to use for parsing       || all languages in the grammar will be tried ||
+|| from      || the name of the concrete syntax to use for parsing || all languages in the grammar will be tried ||
 || limit     || maximal number of trees generated    || all words will be returned ||
 
 ===Output===
@@ -204,7 +204,7 @@ This command renders the parse tree that corresponds to a specific abstract synt
 || Parameter || Description                        || Default      ||
 || command   || should be 'parsetree'              || -            ||
 || tree      || the abstract syntax tree to render || -            ||
-|| from      || language to use in the rendering   || -            ||
+|| from      || the name of the concrete syntax to use in the rendering   || -            ||
 || format    || output format (gf>3.3.3)           || png          ||
 
 ===Output===
