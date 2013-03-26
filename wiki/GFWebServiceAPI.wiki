@@ -206,6 +206,11 @@ This command renders the parse tree that corresponds to a specific abstract synt
 || tree      || the abstract syntax tree to render || -            ||
 || from      || the name of the concrete syntax to use in the rendering   || -            ||
 || format    || output format (gf>3.3.3)           || png          ||
+|| _options_ || additional rendering options (gf>3.4) || -            ||
+
+The additioal rendering options are: noleaves, nofun and nocat (booleans, false by default);
+nodefont, leaffont, nodecolor, leafcolor, nodeedgestyle and leafedgestyle
+(strings, have builtin defaults).
 
 ===Output===
 By default, the output is an image in PNG format. The content-type is set to 'image/png', so the easiest way to visualize the generated image is to add HTML element <img/> which points to URL for the visualization command i.e.:
@@ -220,13 +225,14 @@ The output can also be in gif ('image/gif'), svg ('image/svg+xml') or gv (graphv
 
 ==Word Alignment Diagram==
 
-This command renders the word alignment diagram for some sentence and all languages in the grammar. The sentence is generated from a given abstract syntax tree. The generated image is in PNG format.
+This command renders the word alignment diagram for some sentence and all languages in the grammar. The sentence is generated from a given abstract syntax tree.
 
 ===Input===
 || Parameter || Description                        || Default      ||
 || command   || should be 'alignment'              || -            ||
 || tree      || the abstract syntax tree to render || -            ||
 || format    || output format (gf>3.3.3)           || png          ||
+|| to        || list of languages to include in the diagram (gf>3.4) || all languages supported by the grammar ||
 
 ===Output===
 By default, the output is an image in PNG format. The content-type is set to 'image/png', so the easiest way to visualize the generated image is to add HTML element <img/> which points to URL for the visualization command i.e.:
